@@ -15,7 +15,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @version 1.00
  */
 public class Method1 {
-	
+    	
 	private static BufferedImage originalImage;
 	private static File input;
 	private static File output;
@@ -29,7 +29,7 @@ public class Method1 {
 	 */
 	public static void postResult (String filename) {
 		
-		output = new File("C:\\Users\\Admin\\Desktop\\" + filename + ".jpg");
+		output = new File(System.getProperty("user.home") + "/Desktop/" + filename + ".jpg");
 		try {
 			ImageIO.write(originalImage, "jpg", output);
 		} catch (IOException e) {
