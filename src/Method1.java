@@ -12,7 +12,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * Deep Fried Manipulation Method 1: Saturation and Brightness Boost
  * 
  * @author Joseph White
- * @version 1.00
+ * @version 1.01
  */
 public class Method1 {
     	
@@ -24,8 +24,9 @@ public class Method1 {
 	private String[] options = {"Saturation", "Brigtness", "Saturation and Brightness"};
 	
 	/**
-	 * 
+	 * Saves the image to the desktop and opens said image in the default image viewer
 	 * @param filename
+	 * 
 	 */
 	public static void postResult (String filename) {
 		

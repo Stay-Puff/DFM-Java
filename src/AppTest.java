@@ -39,5 +39,6 @@ public class AppTest {
 		System.out.println(saturation);
 		System.out.println(brightness);
 		System.out.println(System.getProperty("user.home") + "/Desktop/");
+		System.out.println(453/1000.0);
 	}
 }
