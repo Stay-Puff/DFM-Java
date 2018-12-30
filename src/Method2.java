@@ -13,23 +13,30 @@ import javax.imageio.stream.FileImageOutputStream;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
+/**
+ * Deep Fried Manipulation Method 2: JPEG Compression
+ * 
+ * @author Joseph White
+ * @version 1.04
+ */
 public class Method2 {
 	
 	private static BufferedImage originalImage;
-	private static BufferedImage outputImage;
 	private static String filename;
 	private static File inputFile;
 	private static File outputFile;
 	private static int iterationTicks;
 	
 	/**
+	 * Compresses the given image with a given iteration of deduction to quality. Saves the resulting image onto
+	 * the desktop and opens the image with the default image viewer.
 	 * 
-	 * @param iterations
+	 * @param iterations number of times to reduce the JPEG quality
+	 * @param img original image to convert
 	 */
-	public static void moreJPEG(int iterations) {
+	public static void moreJPEG(int iterations, BufferedImage img) {
 		try {
-			originalImage = ImageIO.read(inputFile);
+			img = originalImage = ImageIO.read(inputFile);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -66,7 +73,6 @@ public class Method2 {
         int returnVal = chooser.showOpenDialog(null);
         if(returnVal == JFileChooser.APPROVE_OPTION) {
         	inputFile = chooser.getSelectedFile();
-        	//String imgPath = imgInput.getAbsolutePath();
         	JOptionPane.showMessageDialog(null,("You chose to open this file: " + chooser.getSelectedFile().getName()));
         }
         filename = JOptionPane.showInputDialog("What will be the name of the new image?");
@@ -83,6 +89,11 @@ public class Method2 {
         		JOptionPane.showMessageDialog(null, "That's not a whole positive number! Try again!");
         	}
         }
-		moreJPEG(iterationTicks);
+        try {
+			originalImage = ImageIO.read(inputFile);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		moreJPEG(iterationTicks, originalImage);
 	}
 }

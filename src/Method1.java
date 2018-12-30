@@ -12,7 +12,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * Deep Fried Manipulation Method 1: Saturation and Brightness Boost
  * 
  * @author Joseph White
- * @version 1.01
+ * @version 1.04
  */
 public class Method1 {
     	
@@ -53,7 +53,7 @@ public class Method1 {
 	 * @param image Image to saturate
 	 * @param iterate Number of iterations to saturate image
 	 */
-	public static void saturateImage(File image, int iterate) {
+	public static void saturateAndBrightenImage(File image, int iterate) {
 		
 		try {
 			originalImage = ImageIO.read(input);
@@ -125,7 +125,6 @@ public class Method1 {
         int returnVal = chooser.showOpenDialog(null);
         if(returnVal == JFileChooser.APPROVE_OPTION) {
         	input = chooser.getSelectedFile();
-        	//String imgPath = imgInput.getAbsolutePath();
         	JOptionPane.showMessageDialog(null,("You chose to open this file: " + chooser.getSelectedFile().getName()));
         }
         String outputName = JOptionPane.showInputDialog("What will be the name of the new image?");
@@ -142,7 +141,7 @@ public class Method1 {
         	}
         }
         
-        saturateImage(input, iterationCount);
+        saturateAndBrightenImage(input, iterationCount);
         postResult(outputName);
     }
 }
