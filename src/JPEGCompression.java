@@ -1,7 +1,6 @@
 import java.awt.Desktop;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 import javax.imageio.IIOImage;
@@ -17,9 +16,9 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * Deep Fried Manipulation Method 2: JPEG Compression
  * 
  * @author Joseph White
- * @version 1.04
+ * @version 1.05
  */
-public class Method2 {
+public class JPEGCompression {
 	
 	private static BufferedImage originalImage;
 	private static String filename;

@@ -14,9 +14,9 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * Deep Fried Manipulation Method 3: Contrast Boost
  * 
  * @author Joseph White
- * @version 1.04
+ * @version 1.05
  */
-public class Method3 extends JFrame{
+public class ContrastBoost extends JFrame{
 	
 	private static BufferedImage originalImage;
 	private static BufferedImage finalImage;
@@ -42,7 +42,6 @@ public class Method3 extends JFrame{
 	 * 
 	 */
 	public static void postResult (String filename) {
-		
 		outputFile = new File(System.getProperty("user.home") + "/Desktop/" + filename + ".jpg");
 		try {
 			ImageIO.write(finalImage, "jpg", outputFile);
@@ -76,7 +75,7 @@ public class Method3 extends JFrame{
         try {           
 			originalImage = ImageIO.read(inputFile); // create a buffered image
 		} catch (IOException ex) {
-			Logger.getLogger(Method3.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(ContrastBoost.class.getName()).log(Level.SEVERE, null, ex);
 		}
 		contrastChange();
 		postResult(filename);
